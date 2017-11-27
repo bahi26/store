@@ -33,7 +33,7 @@ function DB_check_category($name)
     else return false ;
 }
 
-function DB_add_section($name,$category,$picture)
+function DB_add_section($name,$picture,$category)
 {
     DB::query('insert into sections (section_name,section_picture,category_id) VALUES (?,?,?)',array($name,$picture,$category));
 }
@@ -78,17 +78,17 @@ function DB_get_products($section_id ,$number=-1)
 
 function DB_delete_category($name)
 {
-    DB::query('delete from categories where name=?',array($name));
+    DB::query('delete from categories where category_name=?',array($name));
 }
 
 function DB_delete_section($name,$category_id)
 {
-    DB::query('delete from sections where name=? and category_id=?',array($name,$category_id));
+    DB::query('delete from sections where section_name=? and category_id=?',array($name,$category_id));
 }
 
 function DB_delete_product($name,$section_id)
 {
-    DB::query('delete from products where name=? and section_id=?',array($name,$section_id));
+    DB::query('delete from products where product_name=? and section_id=?',array($name,$section_id));
 }
 
 function DB_update_category($id,$name=null,$picture=null)

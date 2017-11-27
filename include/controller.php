@@ -1,6 +1,6 @@
 <?php
 include_once'model.php';
-session_start();
+
 
 function add_category()
 {
@@ -68,14 +68,14 @@ function add_product()
             if($_SESSION['auth']>0)
             {
                 $name=$_POST['name'];
-                $category=$_GET['category'];
-                $section=$_GET['section'];
-                $category=DB_check_category($category);
+                $category1=$_GET['category'];
+                $section1=$_GET['section'];
+                $category=DB_check_category($category1);
                 if($category)
                 {
                     $category=$category['id'];
                     $file = $_FILES['image'];
-                    $section=DB_check_section($section,$category);
+                    $section=DB_check_section($section1,$category);
                     if($section)
                     {
                         $cobone_id=$_POST['cobone_id'];
@@ -94,9 +94,9 @@ function add_product()
                         }
                         else return 'there is a cobone with the name ' . $name;
                     }
-                    else return 'there is no section with the name ' . $section['section_name'];
+                    else return 'there is no section with the name ' . $section1;
                 }
-                else return 'there is no category with the name ' . $category['category_name'];
+                else return 'there is no category with the name ' . $category1;
             }
             else return "you don't have authorization" ;
         else return "you don't have authorization";
@@ -117,7 +117,7 @@ function get_sections()
         $category=DB_check_category($_GET['category']);
         if($category)
             return DB_get_sections($category['id']);
-        else return 'category does not exist';
+        else return 'category does not exist <br>';
     }
     else return 'login';
 }
@@ -132,15 +132,16 @@ function get_products()
             $section=DB_check_section($_GET['section'],$category['id']);
             if($section)
                 return DB_get_products($section['id']);
-            else return 'section does not exist';
+            else return 'section does not exist <br>';
         }
-        else return 'category does not exist';
+        else return 'category does not exist <br>';
     }
     else return 'login';
 }
 
 function upload($file,$dir,$old_picture=null)
 {
+
         $file_name = $file['name'];
         $file_tmp_name = $file['tmp_name'];
         $file_size = $file['size'];
@@ -152,18 +153,20 @@ function upload($file,$dir,$old_picture=null)
         {
             if ($file_error == 0)
             {
-                if ($file_size > 1000000000) return arr(false,'size is to pig');
+                if ($file_size > 1000000000) return array(false,'size is to pig');
                     else
                     {
-                    $file_new_name = bin2hex(openssl_random_pseudo_bytes(59,$true));
-                    move_uploaded_file($file_tmp_name, '../images/'.$dir.'/' . $file_new_name .'.'.$file_ext );
-                    if(!is_null($old_picture)&& $old_picture!='0.jpg')  unlink('../images/'.$dir.'/' .$old_picture);
-                    return arr(true,$file_new_name.'.'.$file_ext);
+
+                        $true=true;
+                        $file_new_name=bin2hex(openssl_random_pseudo_bytes(32,$true));
+                        move_uploaded_file($file_tmp_name, '../../images/'.$dir.'/' . $file_new_name .'.'.$file_ext );
+                        if(!is_null($old_picture)&& $old_picture!='0.jpg')  unlink('../../images/'.$dir.'/' .$old_picture);
+                        return array(true,$file_new_name.'.'.$file_ext);
                     }
             }
-            else arr(false,'there is an error updating the image');
+            else return array(false,'there is an error updating the image');
         }
-        else return arr(false,'you must enter an image');
+        else return array(false,'you must enter an image');
 }
 
 function delete_category()
@@ -176,8 +179,11 @@ function delete_category()
                 $name=$_POST['name'];
                 if(DB_check_category($name))
                 {
-                        DB_delete_category($name);
-                        return 'category was delete';
+                    $picture=DB_check_category($name)['category_picture'];
+                    if($picture!='0.jpg')
+                        unlink('../../images/category_pictures/'.$picture);
+                    DB_delete_category($name);
+                    return 'category was delete';
                 }
                 else return 'there is no category with the name ' . $name;
             }
@@ -201,8 +207,11 @@ function delete_section()
                     $category=$category['id'];
                     if(DB_check_section($name,$category))
                     {
-                            DB_delete_section($name,$category);
-                            return 'section was deleted';
+                        $picture=DB_check_section($name,$category)['section_picture'];
+                        if($picture!='0.jpg')
+                            unlink('../../images/section_pictures/'.$picture);
+                        DB_delete_section($name,$category);
+                        return 'section was deleted';
                     }
                     else return 'there is no section with the name ' . $name;
                 }
@@ -232,6 +241,9 @@ function delete_product()
                     {
                         if(DB_check_product($name,$section['id'],0))
                         {
+                            $picture=DB_check_product($name,$section['id'],0)['product_picture'];
+                            if($picture!='0.jpg')
+                                unlink('../../images/product_pictures/'.$picture);
                             DB_delete_product($name,$section['id']);
                             return 'product was deleted';
                         }
@@ -248,12 +260,12 @@ function delete_product()
 
 function get_category()
 {
-    if(isset($_POST['delete-category-submit']))
+    if(true)
     {
         if(isset($_SESSION['auth']))
             if($_SESSION['auth']>0)
             {
-                $name=$_POST['name'];
+                $name=$_GET['category'];
                 if(DB_check_category($name))
                 {
                     return DB_check_category($name);
@@ -267,12 +279,12 @@ function get_category()
 
 function get_section()
 {
-    if(isset($_POST['delete-section-submit']))
+    if(true)
     {
         if(isset($_SESSION['auth']))
             if($_SESSION['auth']>0)
             {
-                $name=$_POST['name'];
+                $name=$_GET['section'];
                 $category=$_GET['category'];
                 $category=DB_check_category($category);
                 if($category)
@@ -293,12 +305,12 @@ function get_section()
 
 function get_product()
 {
-    if(isset($_POST['delete-product-submit']))
+    if(true)
     {
         if(isset($_SESSION['auth']))
             if($_SESSION['auth']>0)
             {
-                $name=$_POST['name'];
+                $name=$_GET['product'];
                 $category=$_GET['category'];
                 $section=$_GET['section'];
                 $category=DB_check_category($category);
@@ -341,7 +353,7 @@ function edit_category()
                         if(!DB_check_category($new_name)) DB_update_category($category['id'],$new_name);
                         else return 'new exists';
                     }
-                    if(!empty($file) && $category['category_picture']!=$file)
+                    if($file['error']<1  && $category['category_picture']!=$file)
                     {
                         $arr = upload($file, 'category_pictures',$category['category_picture']);
                         if ($arr[0])
@@ -379,10 +391,10 @@ function edit_section()
                         $new_name=$_POST['name'];
                         if($new_name!=$name&& !empty($new_name))
                         {
-                            if(!DB_check_section($name,$category)) DB_update_section($section['id'],$new_name);
+                            if(!DB_check_section($new_name,$category)) DB_update_section($section['id'],$new_name);
                             else return 'name exists';
                         }
-                        if(!empty($file) && $section['section_picture']!=$file)
+                        if($file['error']<1  && $section['section_picture']!=$file)
                         {
                             $arr = upload($file, 'section_pictures',$section['section_picture']);
                             if ($arr[0])
@@ -413,7 +425,6 @@ function edit_product()
                 $category=$_GET['category'];
                 $name=$_GET['product'];
                 $category=DB_check_category($category);
-                $file = $_FILES['image'];
                 if($category)
                 {
                     $category=$category['id'];
@@ -432,10 +443,11 @@ function edit_product()
                             $cobone=$_POST['cobone_id'];
                             if($new_name!=$name&& !empty($new_name))
                             {
-                                if(!DB_check_product($name,$section,0)) DB_update_section($product['id'],$new_name);
-                                else return 'name exists';
+
+                                if(!DB_check_product($new_name,$section,0)) DB_update_product($product['id'],$new_name);
+                                else return $new_name.'exists';
                             }
-                            if(!empty($file) && $product['product_picture']!=$file)
+                            if($file['error']<1 && $product['product_picture']!=$file)
                             {
                                 $arr = upload($file, 'product_pictures',$product['product_picture']);
                                 if ($arr[0])
