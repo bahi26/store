@@ -90,3 +90,25 @@ function DB_delete_product($name,$section_id)
 {
     DB::query('delete from products where name=? and section_id=?',array($name,$section_id));
 }
+
+function DB_update_category($id,$name=null,$picture=null)
+{
+    if(!is_null($name)) DB::query('update categories set category_name=? where id=?',array($name,$id));
+    if(!is_null($picture)) DB::query('update categories set category_picture=? where id=?',array($picture,$id));
+}
+
+function DB_update_section($id,$name=null,$picture=null)
+{
+    if(!is_null($name)) DB::query('update sections set section_name=? where id=?',array($name,$id));
+    if(!is_null($picture)) DB::query('update sections set section_picture=? where id=?',array($picture,$id));
+}
+
+function DB_update_product($id,$name=null,$picture=null,$price=null,$number=null,$details=null,$cobone_id=null)
+{
+    if(!is_null($name)) DB::query('update products set product_name=? where id=?',array($name,$id));
+    if(!is_null($picture)) DB::query('update products set product_picture=? where id=?',array($picture,$id));
+    if(!is_null($price)) DB::query('update products set price=? where id=?',array($price,$id));
+    if(!is_null($number)) DB::query('update products set number=? where id=?',array($number,$id));
+    if(!is_null($details)) DB::query('update products set details=? where id=?',array($details,$id));
+    if(!is_null($cobone_id)) DB::query('update products set cobone_id=? where id=?',array($cobone_id,$id));
+}

@@ -245,3 +245,234 @@ function delete_product()
         else return "you don't have authorization";
     }
 }
+
+function get_category()
+{
+    if(isset($_POST['delete-category-submit']))
+    {
+        if(isset($_SESSION['auth']))
+            if($_SESSION['auth']>0)
+            {
+                $name=$_POST['name'];
+                if(DB_check_category($name))
+                {
+                    return DB_check_category($name);
+                }
+                else return 'there is no category with the name ' . $name;
+            }
+            else return "you don't have authorization" ;
+        else return "you don't have authorization";
+    }
+}
+
+function get_section()
+{
+    if(isset($_POST['delete-section-submit']))
+    {
+        if(isset($_SESSION['auth']))
+            if($_SESSION['auth']>0)
+            {
+                $name=$_POST['name'];
+                $category=$_GET['category'];
+                $category=DB_check_category($category);
+                if($category)
+                {
+                    $category=$category['id'];
+                    if(DB_check_section($name,$category))
+                    {
+                        return DB_check_section($name,$category);
+                    }
+                    else return 'there is no section with the name ' . $name;
+                }
+                else return 'there is no category with the name ' . $category['category_name'];
+            }
+            else return "you don't have authorization" ;
+        else return "you don't have authorization";
+    }
+}
+
+function get_product()
+{
+    if(isset($_POST['delete-product-submit']))
+    {
+        if(isset($_SESSION['auth']))
+            if($_SESSION['auth']>0)
+            {
+                $name=$_POST['name'];
+                $category=$_GET['category'];
+                $section=$_GET['section'];
+                $category=DB_check_category($category);
+                if($category)
+                {
+                    $category=$category['id'];
+                    $section=DB_check_section($section,$category);
+                    if($section)
+                    {
+                        if(DB_check_product($name,$section['id'],0))
+                        {
+                            return DB_check_product($name,$section['id'],0);
+                        }
+                        else return 'there is no cobone with the name ' . $name;
+                    }
+                    else return 'there is no section with the name ' . $section['section_name'];
+                }
+                else return 'there is no category with the name ' . $category['category_name'];
+            }
+            else return "you don't have authorization" ;
+        else return "you don't have authorization";
+    }
+}
+
+function edit_category()
+{
+    if(isset($_POST['edit-category-submit']))
+    {
+        if(isset($_SESSION['auth']))
+            if($_SESSION['auth']>0)
+            {
+                $name=$_GET['category'];
+                $file = $_FILES['image'];
+                $category=DB_check_category($name);
+                if($category)
+                {
+                    $new_name=$_POST['name'];
+                    if($new_name!=$name && !empty($new_name))
+                    {
+                        if(!DB_check_category($new_name)) DB_update_category($category['id'],$new_name);
+                        else return 'new exists';
+                    }
+                    if(!empty($file) && $category['category_picture']!=$file)
+                    {
+                        $arr = upload($file, 'category_pictures',$category['category_picture']);
+                        if ($arr[0])
+                        {
+                            DB_update_category($category['id'],null,$arr[1]);
+                        }
+                        else return $arr['1'];
+                    }
+                    return 'data was updated';
+                }
+                else return 'there is no category with the name ' . $name;
+            }
+            else return "you don't have authorization" ;
+        else return "you don't have authorization";
+    }
+}
+
+function edit_section()
+{
+    if(isset($_POST['edit-section-submit']))
+    {
+        if(isset($_SESSION['auth']))
+            if($_SESSION['auth']>0)
+            {
+                $name=$_GET['section'];
+                $category=$_GET['category'];
+                $category=DB_check_category($category);
+                $file = $_FILES['image'];
+                if($category)
+                {
+                    $category=$category['id'];
+                    $section=DB_check_section($name,$category);
+                    if($section)
+                    {
+                        $new_name=$_POST['name'];
+                        if($new_name!=$name&& !empty($new_name))
+                        {
+                            if(!DB_check_section($name,$category)) DB_update_section($section['id'],$new_name);
+                            else return 'name exists';
+                        }
+                        if(!empty($file) && $section['section_picture']!=$file)
+                        {
+                            $arr = upload($file, 'section_pictures',$section['section_picture']);
+                            if ($arr[0])
+                            {
+                                DB_update_section($section['id'],null,$arr[1]);
+                            }
+                            else return $arr['1'];
+                        }
+                        return 'data was updated';
+                    }
+                    else return 'there is no section with the name ' . $name;
+                }
+                else return 'there is no category with the name ' . $category['category_name'];
+            }
+            else return "you don't have authorization" ;
+        else return "you don't have authorization";
+    }
+}
+
+function edit_product()
+{
+    if(isset($_POST['edit-product-submit']))
+    {
+        if(isset($_SESSION['auth']))
+            if($_SESSION['auth']>0)
+            {
+                $section=$_GET['section'];
+                $category=$_GET['category'];
+                $name=$_GET['product'];
+                $category=DB_check_category($category);
+                $file = $_FILES['image'];
+                if($category)
+                {
+                    $category=$category['id'];
+                    $section=DB_check_section($section,$category);
+                    if($section)
+                    {
+                        $section=$section['id'];
+                        $product=DB_check_product($name,$section,0);
+                        if($product)
+                        {
+                            $new_name=$_POST['name'];
+                            $file = $_FILES['image'];
+                            $price=$_POST['price'];
+                            $number=$_POST['number'];
+                            $details=$_POST['details'];
+                            $cobone=$_POST['cobone_id'];
+                            if($new_name!=$name&& !empty($new_name))
+                            {
+                                if(!DB_check_product($name,$section,0)) DB_update_section($product['id'],$new_name);
+                                else return 'name exists';
+                            }
+                            if(!empty($file) && $product['product_picture']!=$file)
+                            {
+                                $arr = upload($file, 'product_pictures',$product['product_picture']);
+                                if ($arr[0])
+                                {
+                                    DB_update_product($product['id'],null,$arr[1]);
+                                }
+                                else return $arr['1'];
+                            }
+                            if($product['price']!=$price && !empty($price))
+                            {
+                                DB_update_product($product['id'],null,null,$price);
+                            }
+                            if($product['number']!=$number && !empty($number))
+                            {
+                                DB_update_product($product['id'],null,null,null,$number);
+                            }
+                            if(!empty($details))
+                            {
+                                DB_update_product($product['id'],null,null,null,null,$details);
+                            }
+                            if($product['cobone_id']!=$cobone && !empty($cobone))
+                            {
+                                if(DB_check_product($name,0,$cobone))
+                                {
+                                    DB_update_product($product['id'],null,null,null,null,null,$cobone);
+                                }
+                                else return 'cobone id exists';
+                            }
+                            return 'data was updated';
+                        }
+                        else return 'there is no product with the name '.$name;
+                    }
+                    else return 'there is no section with the name ' . $section['section_name'];
+                }
+                else return 'there is no category with the name ' . $category['category_name'];
+            }
+            else return "you don't have authorization" ;
+        else return "you don't have authorization";
+    }
+}
