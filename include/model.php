@@ -112,3 +112,20 @@ function DB_update_product($id,$name=null,$picture=null,$price=null,$number=null
     if(!is_null($details)) DB::query('update products set details=? where id=?',array($details,$id));
     if(!is_null($cobone_id)) DB::query('update products set cobone_id=? where id=?',array($cobone_id,$id));
 }
+
+function DB_add_ticket($name,$picture,$details,$user_id)
+{
+    DB::query('insert into tickets (ticket_name,photo,details,user_id) VALUES (?,?,?,?)',array($name,$picture,$details,$user_id));
+}
+
+function DB_get_tickets($user_id)
+{
+    $data=DB::query('select * from tickets where user_id=? ',array($user_id));
+    return $data;
+}
+
+function DB_get_ticket($id,$user_id)
+{
+    $data=DB::query('select * from tickets where id=? and user_id=? ',array($id,$user_id));
+    return $data;
+}

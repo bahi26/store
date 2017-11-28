@@ -1,6 +1,6 @@
 <?php
 include_once'model.php';
-
+include_once 'lib.php';
 
 function add_category()
 {
@@ -139,35 +139,6 @@ function get_products()
     else return 'login';
 }
 
-function upload($file,$dir,$old_picture=null)
-{
-
-        $file_name = $file['name'];
-        $file_tmp_name = $file['tmp_name'];
-        $file_size = $file['size'];
-        $file_error = $file['error'];
-        $ext = explode('.', $file_name);
-        $file_ext = strtolower(end($ext));
-        $allowed = array('jpg', 'jpeg', 'png');
-        if (in_array($file_ext, $allowed))
-        {
-            if ($file_error == 0)
-            {
-                if ($file_size > 1000000000) return array(false,'size is to pig');
-                    else
-                    {
-
-                        $true=true;
-                        $file_new_name=bin2hex(openssl_random_pseudo_bytes(32,$true));
-                        move_uploaded_file($file_tmp_name, '../../images/'.$dir.'/' . $file_new_name .'.'.$file_ext );
-                        if(!is_null($old_picture)&& $old_picture!='0.jpg')  unlink('../../images/'.$dir.'/' .$old_picture);
-                        return array(true,$file_new_name.'.'.$file_ext);
-                    }
-            }
-            else return array(false,'there is an error updating the image');
-        }
-        else return array(false,'you must enter an image');
-}
 
 function delete_category()
 {
@@ -488,3 +459,47 @@ function edit_product()
         else return "you don't have authorization";
     }
 }
+
+function add_ticket()
+{
+    if(isset($_POST['add-ticket-submit']))
+    {
+        if(isset($_SESSION['id']))
+        {
+            $name = $_POST['ticket_name'];
+            $file = $_FILES['photo'];
+            $details = $_POST['details'];
+                $arr = upload($file, 'ticket_pictures');
+                if ($arr[0])
+                {
+                    DB_add_ticket($name, $arr[1],$details,$_SESSION['id']);
+                    send_mail("bahi.ali26@yahoo.com",$_SESSION['id'],$name,$details,$arr[0]);
+                    return 'ticket was added';
+                }
+                else return $arr['1'];
+
+        }
+        else return "you don't have authorization";
+    }
+}
+
+function get_tickets()
+{
+
+    if(isset($_SESSION['id']))
+    {
+       return DB_get_tickets($_SESSION['id']);
+    }
+    else return "you don't have authorization";
+}
+
+function get_ticket()
+{
+    if(isset($_SESSION['id']))
+    {
+        $id=$_GET['ticket'];
+        return DB_get_ticket($id,$_SESSION['id']);
+    }
+    else return "you don't have authorization";
+}
+
