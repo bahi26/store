@@ -4,7 +4,7 @@
     <list default="true" id="504167a9-0216-4c51-8f75-fc9981dfe5dd" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/controller.php" afterPath="$PROJECT_DIR$/include/controller.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/database.txt" afterPath="$PROJECT_DIR$/include/database.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/model.php" afterPath="$PROJECT_DIR$/include/model.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,8 +22,8 @@
       <file leaf-file-name="controller.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/include/controller.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="539" column="68" lean-forward="false" selection-start-line="539" selection-start-column="68" selection-end-line="539" selection-end-column="68" />
+            <state relative-caret-position="170">
+              <caret line="105" column="0" lean-forward="true" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
               <folding>
                 <element signature="n#add_category#0;n#!!top" expanded="false" />
                 <element signature="n#add_section#0;n#!!top" expanded="false" />
@@ -43,7 +43,23 @@
                 <element signature="n#add_ticket#0;n#!!top" expanded="false" />
                 <element signature="n#get_tickets#0;n#!!top" expanded="false" />
                 <element signature="n#get_ticket#0;n#!!top" expanded="false" />
+                <element signature="n#send_forget#0;n#!!top" expanded="false" />
+                <element signature="n#recover_password#0;n#!!top" expanded="false" />
+                <element signature="n#addUser#0;n#!!top" expanded="false" />
+                <element signature="n#login#0;n#!!top" expanded="false" />
+                <element signature="n#get_information#0;n#!!top" expanded="false" />
+                <element signature="n#update#0;n#!!top" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forget-password.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/test/forget-password.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="7" lean-forward="false" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -51,8 +67,8 @@
       <file leaf-file-name="model.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="479">
-              <caret line="145" column="35" lean-forward="false" selection-start-line="145" selection-start-column="35" selection-end-line="145" selection-end-column="35" />
+            <state relative-caret-position="374">
+              <caret line="162" column="0" lean-forward="false" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
               <folding>
                 <element signature="n#connect#0;n#DB#0;n#!!top" expanded="false" />
                 <element signature="n#query#0;n#DB#0;n#!!top" expanded="false" />
@@ -79,50 +95,57 @@
                 <element signature="n#DB_get_id_by_token#0;n#!!top" expanded="false" />
                 <element signature="n#DB_delete_token#0;n#!!top" expanded="false" />
                 <element signature="n#DB_change_password#0;n#!!top" expanded="false" />
-                <marker date="1511970403661" expanded="true" signature="598:709" ph="select * fro... categories" />
-                <marker date="1511970403661" expanded="true" signature="614:682" ph="insert into categories... " />
-                <marker date="1511970403661" expanded="true" signature="768:815" ph="select * fro... categories" />
-                <marker date="1511970403661" expanded="true" signature="776:815" ph="select * fro... categories" />
-                <marker date="1511970403661" expanded="true" signature="957:1035" ph="insert into sections... " />
-                <marker date="1511970403661" expanded="true" signature="1140:1202" ph="select * fro... sections" />
-                <marker date="1511970403661" expanded="true" signature="1382:1515" ph="insert into products... " />
-                <marker date="1511970403661" expanded="true" signature="1660:1738" ph="select * fro... products" />
-                <marker date="1511970403661" expanded="true" signature="1890:1914" ph="select * fro... categories" />
-                <marker date="1511970403661" expanded="true" signature="1890:1915" ph="select * fro... categories" />
-                <marker date="1511970403661" expanded="true" signature="2002:2044" ph="select * fro... sections" />
-                <marker date="1511970403661" expanded="true" signature="2162:2217" ph="select * fro... products" />
-                <marker date="1511970403661" expanded="true" signature="2321:2365" ph="delete from " />
-                <marker date="1511970403661" expanded="true" signature="2449:2508" ph="delete from " />
-                <marker date="1511970403661" expanded="true" signature="2604:2662" ph="delete from " />
-                <marker date="1511970403661" expanded="true" signature="2789:2837" ph="update categ... " />
-                <marker date="1511970403661" expanded="true" signature="2896:2947" ph="update categ... " />
-                <marker date="1511970403661" expanded="true" signature="3068:3113" ph="update secti... " />
-                <marker date="1511970403661" expanded="true" signature="3172:3220" ph="update secti... " />
-                <marker date="1511970403661" expanded="true" signature="3396:3441" ph="update produ... " />
-                <marker date="1511970403661" expanded="true" signature="3500:3548" ph="update produ... " />
-                <marker date="1511970403661" expanded="true" signature="3608:3646" ph="update produ... " />
-                <marker date="1511970403661" expanded="true" signature="3705:3744" ph="update produ... " />
-                <marker date="1511970403661" expanded="true" signature="3805:3845" ph="update produ... " />
-                <marker date="1511970403661" expanded="true" signature="3909:3951" ph="update produ... " />
-                <marker date="1511970403661" expanded="true" signature="4054:4126" ph="insert into tickets... " />
-                <marker date="1511970403661" expanded="true" signature="4230:4267" ph="select * fro... tickets" />
-                <marker date="1511970403661" expanded="true" signature="4369:4415" ph="select * fro... tickets" />
-                <marker date="1511970403661" expanded="true" signature="4556:4589" ph="select * fro... users" />
-                <marker date="1511970403661" expanded="true" signature="4721:4777" ph="insert into password_tokens... " />
-                <marker date="1511970403661" expanded="true" signature="4861:4910" ph="select id fr... users" />
-                <marker date="1511970403661" expanded="true" signature="5033:5076" ph="delete from " />
-                <marker date="1511970403661" expanded="true" signature="5154:5192" ph="update users... " />
+                <element signature="n#insertUser#0;n#!!top" expanded="false" />
+                <element signature="n#check_email#0;n#!!top" expanded="false" />
+                <element signature="n#select_person#0;n#!!top" expanded="false" />
+                <element signature="n#select_person_byid#0;n#!!top" expanded="false" />
+                <element signature="n#update_email#0;n#!!top" expanded="false" />
+                <element signature="n#update_password#0;n#!!top" expanded="false" />
+                <element signature="n#update_phone#0;n#!!top" expanded="false" />
+                <element signature="n#update_uname#0;n#!!top" expanded="false" />
+                <marker date="1511980209400" expanded="true" signature="598:709" ph="select * fro... categories" />
+                <marker date="1511980209400" expanded="true" signature="614:682" ph="insert into categories... " />
+                <marker date="1511980209400" expanded="true" signature="768:815" ph="select * fro... categories" />
+                <marker date="1511980209400" expanded="true" signature="776:815" ph="select * fro... categories" />
+                <marker date="1511980209400" expanded="true" signature="957:1035" ph="insert into sections... " />
+                <marker date="1511980209400" expanded="true" signature="1140:1202" ph="select * fro... sections" />
+                <marker date="1511980209400" expanded="true" signature="1382:1515" ph="insert into products... " />
+                <marker date="1511980209400" expanded="true" signature="1660:1738" ph="select * fro... products" />
+                <marker date="1511980209400" expanded="true" signature="1890:1914" ph="select * fro... categories" />
+                <marker date="1511980209400" expanded="true" signature="1890:1915" ph="select * fro... categories" />
+                <marker date="1511980209400" expanded="true" signature="2002:2044" ph="select * fro... sections" />
+                <marker date="1511980209400" expanded="true" signature="2162:2217" ph="select * fro... products" />
+                <marker date="1511980209400" expanded="true" signature="2321:2365" ph="delete from " />
+                <marker date="1511980209400" expanded="true" signature="2449:2508" ph="delete from " />
+                <marker date="1511980209400" expanded="true" signature="2604:2662" ph="delete from " />
+                <marker date="1511980209400" expanded="true" signature="2789:2837" ph="update categ... " />
+                <marker date="1511980209400" expanded="true" signature="2896:2947" ph="update categ... " />
+                <marker date="1511980209400" expanded="true" signature="3068:3113" ph="update secti... " />
+                <marker date="1511980209400" expanded="true" signature="3172:3220" ph="update secti... " />
+                <marker date="1511980209400" expanded="true" signature="3396:3441" ph="update produ... " />
+                <marker date="1511980209400" expanded="true" signature="3500:3548" ph="update produ... " />
+                <marker date="1511980209400" expanded="true" signature="3608:3646" ph="update produ... " />
+                <marker date="1511980209400" expanded="true" signature="3705:3744" ph="update produ... " />
+                <marker date="1511980209400" expanded="true" signature="3805:3845" ph="update produ... " />
+                <marker date="1511980209400" expanded="true" signature="3909:3951" ph="update produ... " />
+                <marker date="1511980209400" expanded="true" signature="4054:4126" ph="insert into tickets... " />
+                <marker date="1511980209400" expanded="true" signature="4230:4267" ph="select * fro... tickets" />
+                <marker date="1511980209400" expanded="true" signature="4369:4415" ph="select * fro... tickets" />
+                <marker date="1511980209400" expanded="true" signature="4556:4589" ph="select * fro... users" />
+                <marker date="1511980209400" expanded="true" signature="4721:4777" ph="insert into password_tokens... " />
+                <marker date="1511980209400" expanded="true" signature="4861:4910" ph="select id fr... users" />
+                <marker date="1511980209400" expanded="true" signature="5033:5076" ph="delete from " />
+                <marker date="1511980209400" expanded="true" signature="5136:6472" ph="{...}" />
+                <marker date="1511980209400" expanded="true" signature="5154:5192" ph="update users... " />
+                <marker date="1511980209400" expanded="true" signature="5297:5383" ph="INSERT INTO `users`... " />
+                <marker date="1511980209400" expanded="true" signature="5506:5545" ph="select email... users" />
+                <marker date="1511980209400" expanded="true" signature="5692:5762" ph="select id, u... users" />
+                <marker date="1511980209400" expanded="true" signature="5867:5938" ph="select user_... users" />
+                <marker date="1511980209400" expanded="true" signature="6034:6069" ph="update users... " />
+                <marker date="1511980209400" expanded="true" signature="6153:6191" ph="update users... " />
+                <marker date="1511980209400" expanded="true" signature="6272:6314" ph="update users... " />
+                <marker date="1511980209400" expanded="true" signature="6396:6435" ph="update users... " />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forget-password.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/include/test/forget-password.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="7" lean-forward="false" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -212,8 +235,8 @@
         <option value="$PROJECT_DIR$/include/lib.php" />
         <option value="$PROJECT_DIR$/include/test/tickets.php" />
         <option value="$PROJECT_DIR$/include/test/forget-password.php" />
-        <option value="$PROJECT_DIR$/include/model.php" />
         <option value="$PROJECT_DIR$/include/database.txt" />
+        <option value="$PROJECT_DIR$/include/model.php" />
         <option value="$PROJECT_DIR$/include/controller.php" />
       </list>
     </option>
@@ -405,12 +428,12 @@
       <workItem from="1511774909932" duration="23725000" />
       <workItem from="1511855758610" duration="3977000" />
       <workItem from="1511962678164" duration="5806000" />
-      <workItem from="1511973541108" duration="1545000" />
+      <workItem from="1511973541108" duration="3641000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35053000" />
+    <option name="totallyTimeSpent" value="37149000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -482,6 +505,12 @@
             <element signature="n#add_ticket#0;n#!!top" expanded="false" />
             <element signature="n#get_tickets#0;n#!!top" expanded="false" />
             <element signature="n#get_ticket#0;n#!!top" expanded="false" />
+            <element signature="n#send_forget#0;n#!!top" expanded="false" />
+            <element signature="n#recover_password#0;n#!!top" expanded="false" />
+            <element signature="n#addUser#0;n#!!top" expanded="false" />
+            <element signature="n#login#0;n#!!top" expanded="false" />
+            <element signature="n#get_information#0;n#!!top" expanded="false" />
+            <element signature="n#update#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -516,39 +545,56 @@
             <element signature="n#DB_get_id_by_token#0;n#!!top" expanded="false" />
             <element signature="n#DB_delete_token#0;n#!!top" expanded="false" />
             <element signature="n#DB_change_password#0;n#!!top" expanded="false" />
-            <marker date="1511970403661" expanded="true" signature="598:709" ph="select * fro... categories" />
-            <marker date="1511970403661" expanded="true" signature="614:682" ph="insert into categories... " />
-            <marker date="1511970403661" expanded="true" signature="768:815" ph="select * fro... categories" />
-            <marker date="1511970403661" expanded="true" signature="776:815" ph="select * fro... categories" />
-            <marker date="1511970403661" expanded="true" signature="957:1035" ph="insert into sections... " />
-            <marker date="1511970403661" expanded="true" signature="1140:1202" ph="select * fro... sections" />
-            <marker date="1511970403661" expanded="true" signature="1382:1515" ph="insert into products... " />
-            <marker date="1511970403661" expanded="true" signature="1660:1738" ph="select * fro... products" />
-            <marker date="1511970403661" expanded="true" signature="1890:1914" ph="select * fro... categories" />
-            <marker date="1511970403661" expanded="true" signature="1890:1915" ph="select * fro... categories" />
-            <marker date="1511970403661" expanded="true" signature="2002:2044" ph="select * fro... sections" />
-            <marker date="1511970403661" expanded="true" signature="2162:2217" ph="select * fro... products" />
-            <marker date="1511970403661" expanded="true" signature="2321:2365" ph="delete from " />
-            <marker date="1511970403661" expanded="true" signature="2449:2508" ph="delete from " />
-            <marker date="1511970403661" expanded="true" signature="2604:2662" ph="delete from " />
-            <marker date="1511970403661" expanded="true" signature="2789:2837" ph="update categ... " />
-            <marker date="1511970403661" expanded="true" signature="2896:2947" ph="update categ... " />
-            <marker date="1511970403661" expanded="true" signature="3068:3113" ph="update secti... " />
-            <marker date="1511970403661" expanded="true" signature="3172:3220" ph="update secti... " />
-            <marker date="1511970403661" expanded="true" signature="3396:3441" ph="update produ... " />
-            <marker date="1511970403661" expanded="true" signature="3500:3548" ph="update produ... " />
-            <marker date="1511970403661" expanded="true" signature="3608:3646" ph="update produ... " />
-            <marker date="1511970403661" expanded="true" signature="3705:3744" ph="update produ... " />
-            <marker date="1511970403661" expanded="true" signature="3805:3845" ph="update produ... " />
-            <marker date="1511970403661" expanded="true" signature="3909:3951" ph="update produ... " />
-            <marker date="1511970403661" expanded="true" signature="4054:4126" ph="insert into tickets... " />
-            <marker date="1511970403661" expanded="true" signature="4230:4267" ph="select * fro... tickets" />
-            <marker date="1511970403661" expanded="true" signature="4369:4415" ph="select * fro... tickets" />
-            <marker date="1511970403661" expanded="true" signature="4556:4589" ph="select * fro... users" />
-            <marker date="1511970403661" expanded="true" signature="4721:4777" ph="insert into password_tokens... " />
-            <marker date="1511970403661" expanded="true" signature="4861:4910" ph="select id fr... users" />
-            <marker date="1511970403661" expanded="true" signature="5033:5076" ph="delete from " />
-            <marker date="1511970403661" expanded="true" signature="5154:5192" ph="update users... " />
+            <element signature="n#insertUser#0;n#!!top" expanded="false" />
+            <element signature="n#check_email#0;n#!!top" expanded="false" />
+            <element signature="n#select_person#0;n#!!top" expanded="false" />
+            <element signature="n#select_person_byid#0;n#!!top" expanded="false" />
+            <element signature="n#update_email#0;n#!!top" expanded="false" />
+            <element signature="n#update_password#0;n#!!top" expanded="false" />
+            <element signature="n#update_phone#0;n#!!top" expanded="false" />
+            <element signature="n#update_uname#0;n#!!top" expanded="false" />
+            <marker date="1511980209400" expanded="true" signature="598:709" ph="select * fro... categories" />
+            <marker date="1511980209400" expanded="true" signature="614:682" ph="insert into categories... " />
+            <marker date="1511980209400" expanded="true" signature="768:815" ph="select * fro... categories" />
+            <marker date="1511980209400" expanded="true" signature="776:815" ph="select * fro... categories" />
+            <marker date="1511980209400" expanded="true" signature="957:1035" ph="insert into sections... " />
+            <marker date="1511980209400" expanded="true" signature="1140:1202" ph="select * fro... sections" />
+            <marker date="1511980209400" expanded="true" signature="1382:1515" ph="insert into products... " />
+            <marker date="1511980209400" expanded="true" signature="1660:1738" ph="select * fro... products" />
+            <marker date="1511980209400" expanded="true" signature="1890:1914" ph="select * fro... categories" />
+            <marker date="1511980209400" expanded="true" signature="1890:1915" ph="select * fro... categories" />
+            <marker date="1511980209400" expanded="true" signature="2002:2044" ph="select * fro... sections" />
+            <marker date="1511980209400" expanded="true" signature="2162:2217" ph="select * fro... products" />
+            <marker date="1511980209400" expanded="true" signature="2321:2365" ph="delete from " />
+            <marker date="1511980209400" expanded="true" signature="2449:2508" ph="delete from " />
+            <marker date="1511980209400" expanded="true" signature="2604:2662" ph="delete from " />
+            <marker date="1511980209400" expanded="true" signature="2789:2837" ph="update categ... " />
+            <marker date="1511980209400" expanded="true" signature="2896:2947" ph="update categ... " />
+            <marker date="1511980209400" expanded="true" signature="3068:3113" ph="update secti... " />
+            <marker date="1511980209400" expanded="true" signature="3172:3220" ph="update secti... " />
+            <marker date="1511980209400" expanded="true" signature="3396:3441" ph="update produ... " />
+            <marker date="1511980209400" expanded="true" signature="3500:3548" ph="update produ... " />
+            <marker date="1511980209400" expanded="true" signature="3608:3646" ph="update produ... " />
+            <marker date="1511980209400" expanded="true" signature="3705:3744" ph="update produ... " />
+            <marker date="1511980209400" expanded="true" signature="3805:3845" ph="update produ... " />
+            <marker date="1511980209400" expanded="true" signature="3909:3951" ph="update produ... " />
+            <marker date="1511980209400" expanded="true" signature="4054:4126" ph="insert into tickets... " />
+            <marker date="1511980209400" expanded="true" signature="4230:4267" ph="select * fro... tickets" />
+            <marker date="1511980209400" expanded="true" signature="4369:4415" ph="select * fro... tickets" />
+            <marker date="1511980209400" expanded="true" signature="4556:4589" ph="select * fro... users" />
+            <marker date="1511980209400" expanded="true" signature="4721:4777" ph="insert into password_tokens... " />
+            <marker date="1511980209400" expanded="true" signature="4861:4910" ph="select id fr... users" />
+            <marker date="1511980209400" expanded="true" signature="5033:5076" ph="delete from " />
+            <marker date="1511980209400" expanded="true" signature="5136:6472" ph="{...}" />
+            <marker date="1511980209400" expanded="true" signature="5154:5192" ph="update users... " />
+            <marker date="1511980209400" expanded="true" signature="5297:5383" ph="INSERT INTO `users`... " />
+            <marker date="1511980209400" expanded="true" signature="5506:5545" ph="select email... users" />
+            <marker date="1511980209400" expanded="true" signature="5692:5762" ph="select id, u... users" />
+            <marker date="1511980209400" expanded="true" signature="5867:5938" ph="select user_... users" />
+            <marker date="1511980209400" expanded="true" signature="6034:6069" ph="update users... " />
+            <marker date="1511980209400" expanded="true" signature="6153:6191" ph="update users... " />
+            <marker date="1511980209400" expanded="true" signature="6272:6314" ph="update users... " />
+            <marker date="1511980209400" expanded="true" signature="6396:6435" ph="update users... " />
           </folding>
         </state>
       </provider>
@@ -633,6 +679,12 @@
             <element signature="n#add_ticket#0;n#!!top" expanded="false" />
             <element signature="n#get_tickets#0;n#!!top" expanded="false" />
             <element signature="n#get_ticket#0;n#!!top" expanded="false" />
+            <element signature="n#send_forget#0;n#!!top" expanded="false" />
+            <element signature="n#recover_password#0;n#!!top" expanded="false" />
+            <element signature="n#addUser#0;n#!!top" expanded="false" />
+            <element signature="n#login#0;n#!!top" expanded="false" />
+            <element signature="n#get_information#0;n#!!top" expanded="false" />
+            <element signature="n#update#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -684,39 +736,56 @@
             <element signature="n#DB_get_id_by_token#0;n#!!top" expanded="false" />
             <element signature="n#DB_delete_token#0;n#!!top" expanded="false" />
             <element signature="n#DB_change_password#0;n#!!top" expanded="false" />
-            <marker date="1511970403661" expanded="true" signature="598:709" ph="select * fro... categories" />
-            <marker date="1511970403661" expanded="true" signature="614:682" ph="insert into categories... " />
-            <marker date="1511970403661" expanded="true" signature="768:815" ph="select * fro... categories" />
-            <marker date="1511970403661" expanded="true" signature="776:815" ph="select * fro... categories" />
-            <marker date="1511970403661" expanded="true" signature="957:1035" ph="insert into sections... " />
-            <marker date="1511970403661" expanded="true" signature="1140:1202" ph="select * fro... sections" />
-            <marker date="1511970403661" expanded="true" signature="1382:1515" ph="insert into products... " />
-            <marker date="1511970403661" expanded="true" signature="1660:1738" ph="select * fro... products" />
-            <marker date="1511970403661" expanded="true" signature="1890:1914" ph="select * fro... categories" />
-            <marker date="1511970403661" expanded="true" signature="1890:1915" ph="select * fro... categories" />
-            <marker date="1511970403661" expanded="true" signature="2002:2044" ph="select * fro... sections" />
-            <marker date="1511970403661" expanded="true" signature="2162:2217" ph="select * fro... products" />
-            <marker date="1511970403661" expanded="true" signature="2321:2365" ph="delete from " />
-            <marker date="1511970403661" expanded="true" signature="2449:2508" ph="delete from " />
-            <marker date="1511970403661" expanded="true" signature="2604:2662" ph="delete from " />
-            <marker date="1511970403661" expanded="true" signature="2789:2837" ph="update categ... " />
-            <marker date="1511970403661" expanded="true" signature="2896:2947" ph="update categ... " />
-            <marker date="1511970403661" expanded="true" signature="3068:3113" ph="update secti... " />
-            <marker date="1511970403661" expanded="true" signature="3172:3220" ph="update secti... " />
-            <marker date="1511970403661" expanded="true" signature="3396:3441" ph="update produ... " />
-            <marker date="1511970403661" expanded="true" signature="3500:3548" ph="update produ... " />
-            <marker date="1511970403661" expanded="true" signature="3608:3646" ph="update produ... " />
-            <marker date="1511970403661" expanded="true" signature="3705:3744" ph="update produ... " />
-            <marker date="1511970403661" expanded="true" signature="3805:3845" ph="update produ... " />
-            <marker date="1511970403661" expanded="true" signature="3909:3951" ph="update produ... " />
-            <marker date="1511970403661" expanded="true" signature="4054:4126" ph="insert into tickets... " />
-            <marker date="1511970403661" expanded="true" signature="4230:4267" ph="select * fro... tickets" />
-            <marker date="1511970403661" expanded="true" signature="4369:4415" ph="select * fro... tickets" />
-            <marker date="1511970403661" expanded="true" signature="4556:4589" ph="select * fro... users" />
-            <marker date="1511970403661" expanded="true" signature="4721:4777" ph="insert into password_tokens... " />
-            <marker date="1511970403661" expanded="true" signature="4861:4910" ph="select id fr... users" />
-            <marker date="1511970403661" expanded="true" signature="5033:5076" ph="delete from " />
-            <marker date="1511970403661" expanded="true" signature="5154:5192" ph="update users... " />
+            <element signature="n#insertUser#0;n#!!top" expanded="false" />
+            <element signature="n#check_email#0;n#!!top" expanded="false" />
+            <element signature="n#select_person#0;n#!!top" expanded="false" />
+            <element signature="n#select_person_byid#0;n#!!top" expanded="false" />
+            <element signature="n#update_email#0;n#!!top" expanded="false" />
+            <element signature="n#update_password#0;n#!!top" expanded="false" />
+            <element signature="n#update_phone#0;n#!!top" expanded="false" />
+            <element signature="n#update_uname#0;n#!!top" expanded="false" />
+            <marker date="1511980209400" expanded="true" signature="598:709" ph="select * fro... categories" />
+            <marker date="1511980209400" expanded="true" signature="614:682" ph="insert into categories... " />
+            <marker date="1511980209400" expanded="true" signature="768:815" ph="select * fro... categories" />
+            <marker date="1511980209400" expanded="true" signature="776:815" ph="select * fro... categories" />
+            <marker date="1511980209400" expanded="true" signature="957:1035" ph="insert into sections... " />
+            <marker date="1511980209400" expanded="true" signature="1140:1202" ph="select * fro... sections" />
+            <marker date="1511980209400" expanded="true" signature="1382:1515" ph="insert into products... " />
+            <marker date="1511980209400" expanded="true" signature="1660:1738" ph="select * fro... products" />
+            <marker date="1511980209400" expanded="true" signature="1890:1914" ph="select * fro... categories" />
+            <marker date="1511980209400" expanded="true" signature="1890:1915" ph="select * fro... categories" />
+            <marker date="1511980209400" expanded="true" signature="2002:2044" ph="select * fro... sections" />
+            <marker date="1511980209400" expanded="true" signature="2162:2217" ph="select * fro... products" />
+            <marker date="1511980209400" expanded="true" signature="2321:2365" ph="delete from " />
+            <marker date="1511980209400" expanded="true" signature="2449:2508" ph="delete from " />
+            <marker date="1511980209400" expanded="true" signature="2604:2662" ph="delete from " />
+            <marker date="1511980209400" expanded="true" signature="2789:2837" ph="update categ... " />
+            <marker date="1511980209400" expanded="true" signature="2896:2947" ph="update categ... " />
+            <marker date="1511980209400" expanded="true" signature="3068:3113" ph="update secti... " />
+            <marker date="1511980209400" expanded="true" signature="3172:3220" ph="update secti... " />
+            <marker date="1511980209400" expanded="true" signature="3396:3441" ph="update produ... " />
+            <marker date="1511980209400" expanded="true" signature="3500:3548" ph="update produ... " />
+            <marker date="1511980209400" expanded="true" signature="3608:3646" ph="update produ... " />
+            <marker date="1511980209400" expanded="true" signature="3705:3744" ph="update produ... " />
+            <marker date="1511980209400" expanded="true" signature="3805:3845" ph="update produ... " />
+            <marker date="1511980209400" expanded="true" signature="3909:3951" ph="update produ... " />
+            <marker date="1511980209400" expanded="true" signature="4054:4126" ph="insert into tickets... " />
+            <marker date="1511980209400" expanded="true" signature="4230:4267" ph="select * fro... tickets" />
+            <marker date="1511980209400" expanded="true" signature="4369:4415" ph="select * fro... tickets" />
+            <marker date="1511980209400" expanded="true" signature="4556:4589" ph="select * fro... users" />
+            <marker date="1511980209400" expanded="true" signature="4721:4777" ph="insert into password_tokens... " />
+            <marker date="1511980209400" expanded="true" signature="4861:4910" ph="select id fr... users" />
+            <marker date="1511980209400" expanded="true" signature="5033:5076" ph="delete from " />
+            <marker date="1511980209400" expanded="true" signature="5136:6472" ph="{...}" />
+            <marker date="1511980209400" expanded="true" signature="5154:5192" ph="update users... " />
+            <marker date="1511980209400" expanded="true" signature="5297:5383" ph="INSERT INTO `users`... " />
+            <marker date="1511980209400" expanded="true" signature="5506:5545" ph="select email... users" />
+            <marker date="1511980209400" expanded="true" signature="5692:5762" ph="select id, u... users" />
+            <marker date="1511980209400" expanded="true" signature="5867:5938" ph="select user_... users" />
+            <marker date="1511980209400" expanded="true" signature="6034:6069" ph="update users... " />
+            <marker date="1511980209400" expanded="true" signature="6153:6191" ph="update users... " />
+            <marker date="1511980209400" expanded="true" signature="6272:6314" ph="update users... " />
+            <marker date="1511980209400" expanded="true" signature="6396:6435" ph="update users... " />
           </folding>
         </state>
       </provider>
@@ -776,6 +845,12 @@
             <element signature="n#add_ticket#0;n#!!top" expanded="false" />
             <element signature="n#get_tickets#0;n#!!top" expanded="false" />
             <element signature="n#get_ticket#0;n#!!top" expanded="false" />
+            <element signature="n#send_forget#0;n#!!top" expanded="false" />
+            <element signature="n#recover_password#0;n#!!top" expanded="false" />
+            <element signature="n#addUser#0;n#!!top" expanded="false" />
+            <element signature="n#login#0;n#!!top" expanded="false" />
+            <element signature="n#get_information#0;n#!!top" expanded="false" />
+            <element signature="n#update#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -818,39 +893,56 @@
             <element signature="n#DB_get_id_by_token#0;n#!!top" expanded="false" />
             <element signature="n#DB_delete_token#0;n#!!top" expanded="false" />
             <element signature="n#DB_change_password#0;n#!!top" expanded="false" />
-            <marker date="1511970403661" expanded="true" signature="598:709" ph="select * fro... categories" />
-            <marker date="1511970403661" expanded="true" signature="614:682" ph="insert into categories... " />
-            <marker date="1511970403661" expanded="true" signature="768:815" ph="select * fro... categories" />
-            <marker date="1511970403661" expanded="true" signature="776:815" ph="select * fro... categories" />
-            <marker date="1511970403661" expanded="true" signature="957:1035" ph="insert into sections... " />
-            <marker date="1511970403661" expanded="true" signature="1140:1202" ph="select * fro... sections" />
-            <marker date="1511970403661" expanded="true" signature="1382:1515" ph="insert into products... " />
-            <marker date="1511970403661" expanded="true" signature="1660:1738" ph="select * fro... products" />
-            <marker date="1511970403661" expanded="true" signature="1890:1914" ph="select * fro... categories" />
-            <marker date="1511970403661" expanded="true" signature="1890:1915" ph="select * fro... categories" />
-            <marker date="1511970403661" expanded="true" signature="2002:2044" ph="select * fro... sections" />
-            <marker date="1511970403661" expanded="true" signature="2162:2217" ph="select * fro... products" />
-            <marker date="1511970403661" expanded="true" signature="2321:2365" ph="delete from " />
-            <marker date="1511970403661" expanded="true" signature="2449:2508" ph="delete from " />
-            <marker date="1511970403661" expanded="true" signature="2604:2662" ph="delete from " />
-            <marker date="1511970403661" expanded="true" signature="2789:2837" ph="update categ... " />
-            <marker date="1511970403661" expanded="true" signature="2896:2947" ph="update categ... " />
-            <marker date="1511970403661" expanded="true" signature="3068:3113" ph="update secti... " />
-            <marker date="1511970403661" expanded="true" signature="3172:3220" ph="update secti... " />
-            <marker date="1511970403661" expanded="true" signature="3396:3441" ph="update produ... " />
-            <marker date="1511970403661" expanded="true" signature="3500:3548" ph="update produ... " />
-            <marker date="1511970403661" expanded="true" signature="3608:3646" ph="update produ... " />
-            <marker date="1511970403661" expanded="true" signature="3705:3744" ph="update produ... " />
-            <marker date="1511970403661" expanded="true" signature="3805:3845" ph="update produ... " />
-            <marker date="1511970403661" expanded="true" signature="3909:3951" ph="update produ... " />
-            <marker date="1511970403661" expanded="true" signature="4054:4126" ph="insert into tickets... " />
-            <marker date="1511970403661" expanded="true" signature="4230:4267" ph="select * fro... tickets" />
-            <marker date="1511970403661" expanded="true" signature="4369:4415" ph="select * fro... tickets" />
-            <marker date="1511970403661" expanded="true" signature="4556:4589" ph="select * fro... users" />
-            <marker date="1511970403661" expanded="true" signature="4721:4777" ph="insert into password_tokens... " />
-            <marker date="1511970403661" expanded="true" signature="4861:4910" ph="select id fr... users" />
-            <marker date="1511970403661" expanded="true" signature="5033:5076" ph="delete from " />
-            <marker date="1511970403661" expanded="true" signature="5154:5192" ph="update users... " />
+            <element signature="n#insertUser#0;n#!!top" expanded="false" />
+            <element signature="n#check_email#0;n#!!top" expanded="false" />
+            <element signature="n#select_person#0;n#!!top" expanded="false" />
+            <element signature="n#select_person_byid#0;n#!!top" expanded="false" />
+            <element signature="n#update_email#0;n#!!top" expanded="false" />
+            <element signature="n#update_password#0;n#!!top" expanded="false" />
+            <element signature="n#update_phone#0;n#!!top" expanded="false" />
+            <element signature="n#update_uname#0;n#!!top" expanded="false" />
+            <marker date="1511980209400" expanded="true" signature="598:709" ph="select * fro... categories" />
+            <marker date="1511980209400" expanded="true" signature="614:682" ph="insert into categories... " />
+            <marker date="1511980209400" expanded="true" signature="768:815" ph="select * fro... categories" />
+            <marker date="1511980209400" expanded="true" signature="776:815" ph="select * fro... categories" />
+            <marker date="1511980209400" expanded="true" signature="957:1035" ph="insert into sections... " />
+            <marker date="1511980209400" expanded="true" signature="1140:1202" ph="select * fro... sections" />
+            <marker date="1511980209400" expanded="true" signature="1382:1515" ph="insert into products... " />
+            <marker date="1511980209400" expanded="true" signature="1660:1738" ph="select * fro... products" />
+            <marker date="1511980209400" expanded="true" signature="1890:1914" ph="select * fro... categories" />
+            <marker date="1511980209400" expanded="true" signature="1890:1915" ph="select * fro... categories" />
+            <marker date="1511980209400" expanded="true" signature="2002:2044" ph="select * fro... sections" />
+            <marker date="1511980209400" expanded="true" signature="2162:2217" ph="select * fro... products" />
+            <marker date="1511980209400" expanded="true" signature="2321:2365" ph="delete from " />
+            <marker date="1511980209400" expanded="true" signature="2449:2508" ph="delete from " />
+            <marker date="1511980209400" expanded="true" signature="2604:2662" ph="delete from " />
+            <marker date="1511980209400" expanded="true" signature="2789:2837" ph="update categ... " />
+            <marker date="1511980209400" expanded="true" signature="2896:2947" ph="update categ... " />
+            <marker date="1511980209400" expanded="true" signature="3068:3113" ph="update secti... " />
+            <marker date="1511980209400" expanded="true" signature="3172:3220" ph="update secti... " />
+            <marker date="1511980209400" expanded="true" signature="3396:3441" ph="update produ... " />
+            <marker date="1511980209400" expanded="true" signature="3500:3548" ph="update produ... " />
+            <marker date="1511980209400" expanded="true" signature="3608:3646" ph="update produ... " />
+            <marker date="1511980209400" expanded="true" signature="3705:3744" ph="update produ... " />
+            <marker date="1511980209400" expanded="true" signature="3805:3845" ph="update produ... " />
+            <marker date="1511980209400" expanded="true" signature="3909:3951" ph="update produ... " />
+            <marker date="1511980209400" expanded="true" signature="4054:4126" ph="insert into tickets... " />
+            <marker date="1511980209400" expanded="true" signature="4230:4267" ph="select * fro... tickets" />
+            <marker date="1511980209400" expanded="true" signature="4369:4415" ph="select * fro... tickets" />
+            <marker date="1511980209400" expanded="true" signature="4556:4589" ph="select * fro... users" />
+            <marker date="1511980209400" expanded="true" signature="4721:4777" ph="insert into password_tokens... " />
+            <marker date="1511980209400" expanded="true" signature="4861:4910" ph="select id fr... users" />
+            <marker date="1511980209400" expanded="true" signature="5033:5076" ph="delete from " />
+            <marker date="1511980209400" expanded="true" signature="5136:6472" ph="{...}" />
+            <marker date="1511980209400" expanded="true" signature="5154:5192" ph="update users... " />
+            <marker date="1511980209400" expanded="true" signature="5297:5383" ph="INSERT INTO `users`... " />
+            <marker date="1511980209400" expanded="true" signature="5506:5545" ph="select email... users" />
+            <marker date="1511980209400" expanded="true" signature="5692:5762" ph="select id, u... users" />
+            <marker date="1511980209400" expanded="true" signature="5867:5938" ph="select user_... users" />
+            <marker date="1511980209400" expanded="true" signature="6034:6069" ph="update users... " />
+            <marker date="1511980209400" expanded="true" signature="6153:6191" ph="update users... " />
+            <marker date="1511980209400" expanded="true" signature="6272:6314" ph="update users... " />
+            <marker date="1511980209400" expanded="true" signature="6396:6435" ph="update users... " />
           </folding>
         </state>
       </provider>
@@ -937,6 +1029,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/include/database.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="55" column="3" lean-forward="false" selection-start-line="55" selection-start-column="3" selection-end-line="55" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/include/test/forget-password.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -947,8 +1047,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/include/model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="145" column="35" lean-forward="false" selection-start-line="145" selection-start-column="35" selection-end-line="145" selection-end-column="35" />
+        <state relative-caret-position="374">
+          <caret line="162" column="0" lean-forward="false" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
           <folding>
             <element signature="n#connect#0;n#DB#0;n#!!top" expanded="false" />
             <element signature="n#query#0;n#DB#0;n#!!top" expanded="false" />
@@ -975,55 +1075,64 @@
             <element signature="n#DB_get_id_by_token#0;n#!!top" expanded="false" />
             <element signature="n#DB_delete_token#0;n#!!top" expanded="false" />
             <element signature="n#DB_change_password#0;n#!!top" expanded="false" />
-            <marker date="1511970403661" expanded="true" signature="598:709" ph="select * fro... categories" />
-            <marker date="1511970403661" expanded="true" signature="614:682" ph="insert into categories... " />
-            <marker date="1511970403661" expanded="true" signature="768:815" ph="select * fro... categories" />
-            <marker date="1511970403661" expanded="true" signature="776:815" ph="select * fro... categories" />
-            <marker date="1511970403661" expanded="true" signature="957:1035" ph="insert into sections... " />
-            <marker date="1511970403661" expanded="true" signature="1140:1202" ph="select * fro... sections" />
-            <marker date="1511970403661" expanded="true" signature="1382:1515" ph="insert into products... " />
-            <marker date="1511970403661" expanded="true" signature="1660:1738" ph="select * fro... products" />
-            <marker date="1511970403661" expanded="true" signature="1890:1914" ph="select * fro... categories" />
-            <marker date="1511970403661" expanded="true" signature="1890:1915" ph="select * fro... categories" />
-            <marker date="1511970403661" expanded="true" signature="2002:2044" ph="select * fro... sections" />
-            <marker date="1511970403661" expanded="true" signature="2162:2217" ph="select * fro... products" />
-            <marker date="1511970403661" expanded="true" signature="2321:2365" ph="delete from " />
-            <marker date="1511970403661" expanded="true" signature="2449:2508" ph="delete from " />
-            <marker date="1511970403661" expanded="true" signature="2604:2662" ph="delete from " />
-            <marker date="1511970403661" expanded="true" signature="2789:2837" ph="update categ... " />
-            <marker date="1511970403661" expanded="true" signature="2896:2947" ph="update categ... " />
-            <marker date="1511970403661" expanded="true" signature="3068:3113" ph="update secti... " />
-            <marker date="1511970403661" expanded="true" signature="3172:3220" ph="update secti... " />
-            <marker date="1511970403661" expanded="true" signature="3396:3441" ph="update produ... " />
-            <marker date="1511970403661" expanded="true" signature="3500:3548" ph="update produ... " />
-            <marker date="1511970403661" expanded="true" signature="3608:3646" ph="update produ... " />
-            <marker date="1511970403661" expanded="true" signature="3705:3744" ph="update produ... " />
-            <marker date="1511970403661" expanded="true" signature="3805:3845" ph="update produ... " />
-            <marker date="1511970403661" expanded="true" signature="3909:3951" ph="update produ... " />
-            <marker date="1511970403661" expanded="true" signature="4054:4126" ph="insert into tickets... " />
-            <marker date="1511970403661" expanded="true" signature="4230:4267" ph="select * fro... tickets" />
-            <marker date="1511970403661" expanded="true" signature="4369:4415" ph="select * fro... tickets" />
-            <marker date="1511970403661" expanded="true" signature="4556:4589" ph="select * fro... users" />
-            <marker date="1511970403661" expanded="true" signature="4721:4777" ph="insert into password_tokens... " />
-            <marker date="1511970403661" expanded="true" signature="4861:4910" ph="select id fr... users" />
-            <marker date="1511970403661" expanded="true" signature="5033:5076" ph="delete from " />
-            <marker date="1511970403661" expanded="true" signature="5154:5192" ph="update users... " />
+            <element signature="n#insertUser#0;n#!!top" expanded="false" />
+            <element signature="n#check_email#0;n#!!top" expanded="false" />
+            <element signature="n#select_person#0;n#!!top" expanded="false" />
+            <element signature="n#select_person_byid#0;n#!!top" expanded="false" />
+            <element signature="n#update_email#0;n#!!top" expanded="false" />
+            <element signature="n#update_password#0;n#!!top" expanded="false" />
+            <element signature="n#update_phone#0;n#!!top" expanded="false" />
+            <element signature="n#update_uname#0;n#!!top" expanded="false" />
+            <marker date="1511980209400" expanded="true" signature="598:709" ph="select * fro... categories" />
+            <marker date="1511980209400" expanded="true" signature="614:682" ph="insert into categories... " />
+            <marker date="1511980209400" expanded="true" signature="768:815" ph="select * fro... categories" />
+            <marker date="1511980209400" expanded="true" signature="776:815" ph="select * fro... categories" />
+            <marker date="1511980209400" expanded="true" signature="957:1035" ph="insert into sections... " />
+            <marker date="1511980209400" expanded="true" signature="1140:1202" ph="select * fro... sections" />
+            <marker date="1511980209400" expanded="true" signature="1382:1515" ph="insert into products... " />
+            <marker date="1511980209400" expanded="true" signature="1660:1738" ph="select * fro... products" />
+            <marker date="1511980209400" expanded="true" signature="1890:1914" ph="select * fro... categories" />
+            <marker date="1511980209400" expanded="true" signature="1890:1915" ph="select * fro... categories" />
+            <marker date="1511980209400" expanded="true" signature="2002:2044" ph="select * fro... sections" />
+            <marker date="1511980209400" expanded="true" signature="2162:2217" ph="select * fro... products" />
+            <marker date="1511980209400" expanded="true" signature="2321:2365" ph="delete from " />
+            <marker date="1511980209400" expanded="true" signature="2449:2508" ph="delete from " />
+            <marker date="1511980209400" expanded="true" signature="2604:2662" ph="delete from " />
+            <marker date="1511980209400" expanded="true" signature="2789:2837" ph="update categ... " />
+            <marker date="1511980209400" expanded="true" signature="2896:2947" ph="update categ... " />
+            <marker date="1511980209400" expanded="true" signature="3068:3113" ph="update secti... " />
+            <marker date="1511980209400" expanded="true" signature="3172:3220" ph="update secti... " />
+            <marker date="1511980209400" expanded="true" signature="3396:3441" ph="update produ... " />
+            <marker date="1511980209400" expanded="true" signature="3500:3548" ph="update produ... " />
+            <marker date="1511980209400" expanded="true" signature="3608:3646" ph="update produ... " />
+            <marker date="1511980209400" expanded="true" signature="3705:3744" ph="update produ... " />
+            <marker date="1511980209400" expanded="true" signature="3805:3845" ph="update produ... " />
+            <marker date="1511980209400" expanded="true" signature="3909:3951" ph="update produ... " />
+            <marker date="1511980209400" expanded="true" signature="4054:4126" ph="insert into tickets... " />
+            <marker date="1511980209400" expanded="true" signature="4230:4267" ph="select * fro... tickets" />
+            <marker date="1511980209400" expanded="true" signature="4369:4415" ph="select * fro... tickets" />
+            <marker date="1511980209400" expanded="true" signature="4556:4589" ph="select * fro... users" />
+            <marker date="1511980209400" expanded="true" signature="4721:4777" ph="insert into password_tokens... " />
+            <marker date="1511980209400" expanded="true" signature="4861:4910" ph="select id fr... users" />
+            <marker date="1511980209400" expanded="true" signature="5033:5076" ph="delete from " />
+            <marker date="1511980209400" expanded="true" signature="5136:6472" ph="{...}" />
+            <marker date="1511980209400" expanded="true" signature="5154:5192" ph="update users... " />
+            <marker date="1511980209400" expanded="true" signature="5297:5383" ph="INSERT INTO `users`... " />
+            <marker date="1511980209400" expanded="true" signature="5506:5545" ph="select email... users" />
+            <marker date="1511980209400" expanded="true" signature="5692:5762" ph="select id, u... users" />
+            <marker date="1511980209400" expanded="true" signature="5867:5938" ph="select user_... users" />
+            <marker date="1511980209400" expanded="true" signature="6034:6069" ph="update users... " />
+            <marker date="1511980209400" expanded="true" signature="6153:6191" ph="update users... " />
+            <marker date="1511980209400" expanded="true" signature="6272:6314" ph="update users... " />
+            <marker date="1511980209400" expanded="true" signature="6396:6435" ph="update users... " />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/database.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="55" column="3" lean-forward="false" selection-start-line="55" selection-start-column="3" selection-end-line="55" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/include/controller.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="539" column="68" lean-forward="false" selection-start-line="539" selection-start-column="68" selection-end-line="539" selection-end-column="68" />
+        <state relative-caret-position="170">
+          <caret line="105" column="0" lean-forward="true" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
           <folding>
             <element signature="n#add_category#0;n#!!top" expanded="false" />
             <element signature="n#add_section#0;n#!!top" expanded="false" />
@@ -1043,6 +1152,12 @@
             <element signature="n#add_ticket#0;n#!!top" expanded="false" />
             <element signature="n#get_tickets#0;n#!!top" expanded="false" />
             <element signature="n#get_ticket#0;n#!!top" expanded="false" />
+            <element signature="n#send_forget#0;n#!!top" expanded="false" />
+            <element signature="n#recover_password#0;n#!!top" expanded="false" />
+            <element signature="n#addUser#0;n#!!top" expanded="false" />
+            <element signature="n#login#0;n#!!top" expanded="false" />
+            <element signature="n#get_information#0;n#!!top" expanded="false" />
+            <element signature="n#update#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>

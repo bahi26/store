@@ -528,25 +528,28 @@ function send_forget()
 
 function recover_password()
 {
-    if(isset($_POST['recover-password-submit']))
+    if (isset($_POST['recover-password-submit']))
     {
-        if(!isset($_SESSION['id']))
+        if (!isset($_SESSION['id']))
         {
-            $token=$_GET['token'];
-            $user=DB_get_id_by_token($token);
-            $password=$_POST['password'];
-            if($user)
+            $token = $_GET['token'];
+            $user = DB_get_id_by_token($token);
+            $password = $_POST['password'];
+            if ($user)
             {
-                $password=password_hash($password,PASSWORD_DEFAULT);
-                DB_change_password($user['user_id'],$password);
+                $password = password_hash($password, PASSWORD_DEFAULT);
+                DB_change_password($user['user_id'], $password);
                 DB_delete_token($user['user_id']);
                 return 'password is changed';
             }
-            else return'this link is expired';
+            else return 'this link is expired';
         }
         else return 'please log out';
     }
- function addUser() {
+}
+
+
+function addUser() {
         $userName = $_POST['username'];
         $email = $_POST['email'];
         $mob=$_POST['mobile'];
@@ -563,8 +566,10 @@ function recover_password()
         exit();
     }
     }
-    function login()
-    {
+
+
+function login()
+{
           $email = $_POST['email'];
                 $pass = $_POST['password'];
                 $person=select_person($email);
@@ -595,16 +600,18 @@ else
                     header("location: LoginRegister.php?login=invalid");
  }
     }
+
     
-    function get_information()
-    {
+function get_information()
+{
         if(!isset($_SESSION))
                                 header("location: LoginRegister.php");
                             else 
         $data=  select_person_byid();
         return $data;
     }
-    function update()
+
+function update()
     {
           $uname = $_POST['username'];
         $password = $_POST['password'];
@@ -657,4 +664,4 @@ else
             }
         }
     
-}
+
