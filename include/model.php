@@ -159,3 +159,53 @@ function DB_change_password($id,$password)
 {
     DB::query('update users set password=? where id=?',array($password,$id));
 }
+ function insertUser($userName,$email,$pass,$mob)
+{
+   
+           DB::query('INSERT INTO `users` (`user_name`, `email`, `password`,`phone_number`) VALUES (?,?,?,?)', array($userName,$email,$pass,$mob));
+               
+
+
+}
+  function check_email($email)
+{
+     
+   
+   $data= DB::query('select email FROM users WHERE email = ?', array($email));
+if($data)
+        return true;
+    else        return false;
+}
+  function select_person($email)
+{
+     
+   
+   $data= DB::query('select id, user_name, email, password, auth FROM users WHERE email = ?', array($email));
+   return $data[0];
+}
+ function select_person_byid()
+{
+     
+   
+   $data= DB::query('select user_name, email, password, phone_number FROM users WHERE id = ?', array($_SESSION['id']));
+   return $data[0];
+}
+function update_email($email)
+{
+  DB::query('update users set email=? where id=?',array($email,$_SESSION['id']));
+}function update_password($pass)
+{
+  DB::query('update users set password=? where id=?',array($pass,$_SESSION['id']));
+}
+function update_phone($phone)
+{
+  DB::query('update users set phone_number=? where id=?',array($phone,$_SESSION['id']));
+}
+function update_uname($uname)
+{
+  DB::query('update users set user_name=? where id=?',array($uname,$_SESSION['id']));
+}
+   function DB_add_category($name,$picture)
+{
+    DB::query('insert into categories (category_name,category_picture) VALUES (?,?)',array($name,$picture));
+}

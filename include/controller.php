@@ -546,4 +546,115 @@ function recover_password()
         }
         else return 'please log out';
     }
+ function addUser() {
+        $userName = $_POST['username'];
+        $email = $_POST['email'];
+        $mob=$_POST['mobile'];
+        $password = $_POST['password'];
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+        if (!check_email($email))
+        {
+        insertUser($userName, $email, $hashed_password,$mob);
+                header("location: LoginRegister.php?success=success");
+        }
+
+    else {
+        header("location: LoginRegister.php?email=exist");
+        exit();
+    }
+    }
+    function login()
+    {
+          $email = $_POST['email'];
+                $pass = $_POST['password'];
+                $person=select_person($email);
+                if ($person)
+                {
+            $check =password_verify($pass,$person['password']);
+ if ($check)
+            {
+$_SESSION['id']=$person['id'];
+$_SESSION['auth']=$person['auth'];
+
+if ($_SESSION['auth']==0)
+{
+    echo 'user';
+}
+else 
+{
+    echo 'admin';
+}
+
+}
+ else {
+                         header("location: LoginRegister.php?login=invalid");
+
+ }
+                }
+ else {
+                    header("location: LoginRegister.php?login=invalid");
+ }
+    }
+    
+    function get_information()
+    {
+        if(!isset($_SESSION))
+                                header("location: LoginRegister.php");
+                            else 
+        $data=  select_person_byid();
+        return $data;
+    }
+    function update()
+    {
+          $uname = $_POST['username'];
+        $password = $_POST['password'];
+        $email = $_POST['email'];
+        $phone_number = $_POST['mobile'];
+        $password_conformation = $_POST['password_conformation'];
+       
+        
+        //check if there's invalid data
+        if (
+                (!filter_var($email, FILTER_VALIDATE_EMAIL) & !empty($email)) ||
+                (!is_numeric($phone_number) & !empty($phone_number)) ||
+                (!preg_match("/^[a-zA-Z0-9]*$/", $password) & !empty($password))) {
+            header("Location: updateuser.php?profile=invalid");
+            exit();
+        }  else {
+                
+                if ($password!= $password_conformation) {
+
+                        header("Location: updateuser.php?profile=mismatch");
+                }
+                    else {
+
+                        if (!empty($email)) {
+                            if (!check_email($email))
+                           update_email($email);
+                       else{
+                                                   header("Location: updateuser.php?email=exist");
+                                               exit();
+                       }
+                        }
+
+                        if (!empty($password)) {
+                            $password = password_hash($password, PASSWORD_DEFAULT);
+                            update_password($password);
+                        }
+
+                      
+
+                        if (!empty($phone_number)) {
+                            update_phone($phone_number);
+                            }
+                        if (!empty($uname)) {
+                            update_uname($uname);
+                            }
+                        header("Location: updateuser.php?update=success");
+                        exit();
+
+    }
+            }
+        }
+    
 }
