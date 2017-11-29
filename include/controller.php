@@ -503,3 +503,47 @@ function get_ticket()
     else return "you don't have authorization";
 }
 
+function send_forget()
+{
+    if(isset($_POST['send-forget-submit']))
+    {
+        if (!isset($_SESSION['id']))
+        {
+            $email=$_POST['email'];
+            $user=DB_get_id_by_email($email);
+            if($user)
+            {
+                $true=true;
+                $token=bin2hex(openssl_random_pseudo_bytes(32,$true));
+                DB_delete_token($user['id']);
+                DB_generate_token($user['id'],$token);
+                send_mail($email,'',$user['username'],'http://localhost/store/include/test/forget-password.php?token='.$token);
+                return 'recovery link was sent please check your email';
+            }
+            else return "email doesn't exist";
+        }
+        else return 'please log out';
+    }
+}
+
+function recover_password()
+{
+    if(isset($_POST['recover-password-submit']))
+    {
+        if(!isset($_SESSION['id']))
+        {
+            $token=$_GET['token'];
+            $user=DB_get_id_by_token($token);
+            $password=$_POST['password'];
+            if($user)
+            {
+                //change password
+                DB_change_password($user['user_id'],$password);
+                DB_delete_token($user['user_id']);
+                return 'password is changed';
+            }
+            else return'this link is expired';
+        }
+        else return 'please log out';
+    }
+}

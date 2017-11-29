@@ -127,5 +127,35 @@ function DB_get_tickets($user_id)
 function DB_get_ticket($id,$user_id)
 {
     $data=DB::query('select * from tickets where id=? and user_id=? ',array($id,$user_id));
-    return $data;
+    if($data) return $data[0];
+    else return false ;
+}
+
+function DB_get_id_by_email($email)
+{
+   $data=DB::query('select * from users where email=?',array($email));
+    if($data) return $data[0];
+    else return false ;
+}
+
+function DB_generate_token($id,$token)
+{
+    DB::query('insert into password_tokens (user_id,token) values (?,?)',array($id,$token));
+}
+
+function DB_get_id_by_token($token)
+{
+    $data=DB::query('select user_id from password_tokens where token=?',array($token));
+    if($data) return $data[0];
+    else return false ;
+}
+
+function DB_delete_token($id)
+{
+    DB::query('delete from password_tokens where user_id=?',array($id));
+}
+
+function DB_change_password($id,$password)
+{
+    DB::query('update users set password=? where id=?',array($password,$id));
 }
