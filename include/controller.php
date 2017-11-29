@@ -537,7 +537,7 @@ function recover_password()
             $password=$_POST['password'];
             if($user)
             {
-                //change password
+                $password=password_hash($password,PASSWORD_DEFAULT);
                 DB_change_password($user['user_id'],$password);
                 DB_delete_token($user['user_id']);
                 return 'password is changed';
